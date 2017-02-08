@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Double Travel</title>
+
+    <link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+
+    <link href="../css/layout.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+
+
+</head>
+
+<body id="page-top">
+
+<div class="fixed-navigation">
+        <span class="align-left">
+            You are signed in as Stella Gavrailova
+        </span>
+    <span class="align-right">
+            Logout
+        </span>
+</div>
+<div class="content">
+
+    <header>
+        <div class="container tab">
+            <div class="col-sm-6">
+                <div class="header-content">
+                    <div class="header-content-inner">
+                        <h1>You dream to travel? </h1>
+                        <h1>Do it now!</h1>
+                        <a href="#download" class="btn btn-outline btn-xl page-scroll">Learn more!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <img src="../img/car.png"/>
+            </div>
+        </div>
+    </header>
+
+    <section id="download" class="download bg-primary text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="section-heading">You can receive all the information you need from us!</h2>
+                    <p> Just pick a country you want to visit and we are going to give you all the information you
+                        need!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-heading">
+                        <h2>Let's get started ...</h2>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 center">
+                <form id="select_country" action="../index.php" method="POST">
+                    <div class="col-md-2">
+                        <label class="form control">Choose a country:</label>
+                    </div>
+                    <div class="col-md-6">
+                        <select name="countries" id="countries" class="form-control">
+                            <option value="6">Австралия</option>
+                            <option value="7">Австрия</option>
+                            <option value="8">Азербайджан</option>
+                            <option value="9">Албания</option>
+                            <option value="10">Алжир</option>
+                            <option value="11">Ангола</option>
+                            <option value="12">Андора</option>
+                            <option value="13">Антигуа и Барбуда</option>
+                            <option value="14">Аржентина</option>
+                            <option value="15">Армения</option>
+                            <option value="186">Аруба</option>
+                            <option value="16">Афганистан</option>
+                            <option value="17">Бангладеш</option>
+                            <option value="18">Барбадос</option>
+                            <option value="19">Бахамски острови</option>
+                            <option value="20">Бахрейн</option>
+                            <option value="21">Беларус</option>
+                            <option value="22">Белгия</option>
+                            <option value="23">Белиз</option>
+                            <option value="24">Бенин</option>
+                            <option value="25">Боливия</option>
+                            <option value="26">Босна и Херцеговина</option>
+                            <option value="27">Ботсвана</option>
+                            <option value="28">Бразилия</option>
+                            <option value="29">Бруней</option>
+                            <option value="30">Буркина Фасо</option>
+                            <option value="31">Бурунди</option>
+                            <option value="32">Бутан</option>
+                            <option value="34">Вануату</option>
+                            <option value="33">Ватикан</option>
+                            <option value="2">Великобритания</option>
+                            <option value="35">Венецуела</option>
+                            <option value="36">Виетнам</option>
+                            <option value="183">Вирджински острови</option>
+                            <option value="37">Габон</option>
+                            <option value="38">Гамбия</option>
+                            <option value="39">Гана</option>
+                            <option value="40">Гватемала</option>
+                            <option value="41">Гвиана</option>
+                            <option value="42">Гвинея</option>
+                            <option value="184">Гвинея Бисау</option>
+                            <option value="43">Германия</option>
+                            <option value="44">Гренада</option>
+                            <option value="45">Грузия</option>
+                            <option value="46">Гърция</option>
+                            <option value="47">Дания</option>
+                            <option value="185">Джибути</option>
+                            <option value="49">Доминика</option>
+                            <option value="50">Доминиканска република</option>
+                            <option value="51">Египет</option>
+                            <option value="52">Еквадор</option>
+                            <option value="53">Екваториална Гвинея</option>
+                            <option value="54">Ел Салвадор</option>
+                            <option value="55">Еритрея</option>
+                            <option value="56">Естония</option>
+                            <option value="57">Етиопия</option>
+                            <option value="58">Замбия</option>
+                            <option value="59">Зимбабве</option>
+                            <option value="60">Израел</option>
+                            <option value="61">Източен Тимор</option>
+                            <option value="62">Индия</option>
+                            <option value="63">Индонезия</option>
+                            <option value="64">Ирак</option>
+                            <option value="65">Иран</option>
+                            <option value="66">Ирландия</option>
+                            <option value="67">Исландия</option>
+                            <option value="68">Испания</option>
+                            <option value="69">Италия</option>
+                            <option value="70">Йемен</option>
+                            <option value="71">Йордания</option>
+                            <option value="212">Кабо Верде</option>
+                            <option value="72">Казахстан</option>
+                            <option value="187">Кайманови острови</option>
+                            <option value="73">Камбоджа</option>
+                            <option value="74">Камерун</option>
+                            <option value="75">Канада</option>
+                            <option value="76">Катар</option>
+                            <option value="77">Кения</option>
+                            <option value="78">Кипър</option>
+                            <option value="79">Киргизстан</option>
+                            <option value="80">Китай</option>
+                            <option value="81">Колумбия</option>
+                            <option value="82">Коморски острови</option>
+                            <option value="48">Конго</option>
+                            <option value="135">Корейска народно-демократична република</option>
+                            <option value="175">Корея</option>
+                            <option value="179">Косово</option>
+                            <option value="83">Коста Рика</option>
+                            <option value="84">Кот д'Ивоар</option>
+                            <option value="85">Куба</option>
+                            <option value="86">Кувейт</option>
+                            <option value="87">Лаос</option>
+                            <option value="93">Латвия</option>
+                            <option value="89">Лесото</option>
+                            <option value="90">Либерия</option>
+                            <option value="91">Либия</option>
+                            <option value="92">Ливан</option>
+                            <option value="88">Литва</option>
+                            <option value="94">Лихтенщайн</option>
+                            <option value="95">Люксембург</option>
+                            <option value="96">Мавритания</option>
+                            <option value="97">Мавриций</option>
+                            <option value="98">Мадагаскар</option>
+                            <option value="99">Македония</option>
+                            <option value="100">Малави</option>
+                            <option value="101">Малайзия</option>
+                            <option value="102">Малдиви</option>
+                            <option value="103">Мали</option>
+                            <option value="104">Малта</option>
+                            <option value="105">Мароко</option>
+                            <option value="106">Мексико</option>
+                            <option value="196">Мианмар</option>
+                            <option value="107">Мозамбик</option>
+                            <option value="108">Молдова</option>
+                            <option value="109">Монако</option>
+                            <option value="110">Монголия</option>
+                            <option value="111">Намибия</option>
+                            <option value="112">Непал</option>
+                            <option value="113">Нигер</option>
+                            <option value="114">Нигерия</option>
+                            <option value="115">Нидерландия</option>
+                            <option value="116">Никарагуа</option>
+                            <option value="117">Нова Зеландия</option>
+                            <option value="118">Норвегия</option>
+                            <option value="119">Обединени арабски емирства</option>
+                            <option value="121">Оман</option>
+                            <option value="122">Пакистан</option>
+                            <option value="181">Палестинска власт</option>
+                            <option value="123">Панама</option>
+                            <option value="207">Папуа Нова Гвинея</option>
+                            <option value="125">Парагвай</option>
+                            <option value="126">Перу</option>
+                            <option value="127">Полша</option>
+                            <option value="128">Португалия</option>
+                            <option value="188">Пуерто Рико</option>
+                            <option value="211">Република Конго</option>
+                            <option value="130">Руанда</option>
+                            <option value="131">Румъния</option>
+                            <option value="132">Русия</option>
+                            <option value="143">САЩ</option>
+                            <option value="133">Сан Марино</option>
+                            <option value="189">Сао Томе и Принсипи</option>
+                            <option value="134">Саудитска Арабия</option>
+                            <option value="190">Свазиленд</option>
+                            <option value="191">Сейшелски острови</option>
+                            <option value="136">Сенегал</option>
+                            <option value="137">Сиера Леоне</option>
+                            <option value="138">Сингапур</option>
+                            <option value="139">Сирия</option>
+                            <option value="140">Словакия</option>
+                            <option value="180">Словения</option>
+                            <option value="141">Сомалия</option>
+                            <option value="213">Суверенен Малтийски орден</option>
+                            <option value="142">Судан</option>
+                            <option value="192">Суринам</option>
+                            <option value="144">Сърбия</option>
+                            <option value="145">Таджикистан</option>
+                            <option value="197">Тайван</option>
+                            <option value="146">Тайланд</option>
+                            <option value="147">Танзания</option>
+                            <option value="148">Того</option>
+                            <option value="149">Тонга</option>
+                            <option value="150">Тринидад и Тобаго</option>
+                            <option value="151">Тунис</option>
+                            <option value="152">Туркменистан</option>
+                            <option value="153">Турция</option>
+                            <option value="154">Уганда</option>
+                            <option value="155">Узбекистан</option>
+                            <option value="156">Украйна</option>
+                            <option value="157">Унгария</option>
+                            <option value="158">Уругвай</option>
+                            <option value="159">Фиджи</option>
+                            <option value="160">Филипини</option>
+                            <option value="161">Финландия</option>
+                            <option value="162">Франция</option>
+                            <option value="124">Френска Гвиана</option>
+                            <option value="163">Хаити</option>
+                            <option value="164">Хондурас</option>
+                            <option value="165">Хърватия</option>
+                            <option value="166">Централноафриканска Република</option>
+                            <option value="167">Чад</option>
+                            <option value="169">Черна гора</option>
+                            <option value="168">Чехия</option>
+                            <option value="170">Чили</option>
+                            <option value="171">Швейцария</option>
+                            <option value="172">Швеция</option>
+                            <option value="173">Шри Ланка</option>
+                            <option value="176">Южен Судан</option>
+                            <option value="174">Южна Африка</option>
+                            <option value="177">Ямайка</option>
+                            <option value="178">Япония</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-outline btn-xl" type="submit" value="submit"> Search</button>
+                </form>
+            </div>
+
+            <div class="col-md-12" id="items">
+                <div class="container-fluid">
+                    <div class="col-md-11 row">
+                        <div class="feature-item">
+                            <i class="icon-info text-primary"></i>
+                            <h4><b>Name:</b></h4>
+                            <p class="text-muted tab"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-11 row">
+                        <div class="feature-item">
+                            <i class="icon-location-pin text-primary"></i>
+                            <h4><b>Region:</b></h4>
+                            <p class="text-muted tab">auauauauauau</p>
+                        </div>
+                    </div>
+                    <div class="col-md-11 row">
+                        <div class="feature-item">
+                            <i class="icon-people text-primary"></i>
+                            <h4><b>Population:</b></h4>
+                            <p class="text-muted tab"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-11 row">
+                        <div class="feature-item">
+                            <i class="icon-directions text-primary"></i>
+                            <h4><b>Area:</b></h4>
+                            <p class="text-muted tab"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-11 row">
+                        <div class="feature-item">
+                            <i class="icon-wallet text-primary"></i>
+                            <h4><b>Currencies:</b></h4>
+                            <p class="text-muted tab"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-11 row">
+                        <div class="feature-item">
+                            <i class="icon-speech text-primary"></i>
+                            <h4><b>Languages:</b></h4>
+                            <p class="text-muted tab"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<footer>
+    <div class="container">
+        <p>&copy; FMI - Web technologies 2016-2017. Lecturer: Milen Petrov. Student: Stella Gavrailova.</p>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="../js/index.js"></script>
+
+</body>
+
+</html>
