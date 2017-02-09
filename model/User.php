@@ -15,9 +15,6 @@ class User
 	/** @var string */
 	public $LAST_NAME = '';
 
-	/**
-	 * @param null $data Database record to construct object with
-	 */
 	public function __construct($data = NULL)
 	{
 		if (!is_array($data)) {
@@ -31,12 +28,6 @@ class User
 		}
 	}
 
-	/**
-	 * Converts the object to an array and prefix every field with $prefix.
-	 *
-	 * @param string $prefix
-	 * @return array
-	 */
 	public function toArray($prefix = '')
 	{
 		$ret = array();

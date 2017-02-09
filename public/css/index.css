@@ -307,3 +307,8 @@ footer p {
 .content {
   margin-top: 65px;
 }
+
+.property-heading {
+  width: 150px;
+  display: flex;
+}
