@@ -1,12 +1,4 @@
 <?php
-/**
- * Initially bootstrap the application:
- *  - create blank database
- *
- * @author kamenim
- * @date 07/08/16
- */
-
 require_once ('../model/User.php');
 require_once ('../db/IDbStore.php');
 require_once ('../db/SQLiteStore.php');
