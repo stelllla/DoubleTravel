@@ -13,7 +13,7 @@ require_once ('../db/SQLiteStore.php');
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$index = $_POST['countries'];
 		$selectedCountry = new Country($countries[$index]);
-		$relatedCountries = file_get_contents('https://restcountries.eu/rest/v1/region/' . $selectedCountry->region);
+		$relatedCountries = json_decode(file_get_contents('https://restcountries.eu/rest/v1/region/' . $selectedCountry->region), true);
 
 		$relatedCountriesList = "";
 		for ($i = 0; $i < count($relatedCountries); $i++) {
