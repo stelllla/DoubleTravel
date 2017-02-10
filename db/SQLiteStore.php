@@ -61,6 +61,25 @@ class SQLiteStore
 		return new User($row);
 	}
 
+	/**
+	 * @param User
+	 * @return Boolean
+	 */
+	public function saveUser(User $user)
+	{
+		$user->EMAIL = trim(strtolower($user->EMAIL));
+		if (empty($user->EMAIL)) {
+			return null;
+		}
+
+		$stmt = $this->db->prepare("INSERT INTO USERS_ (EMAIL, PASS, FIRST_NAME, LAST_NAME) VALUES (:EMAIL, :PASS, :FIRST_NAME , :LAST_NAME)");
+		$stmt->bindValue(':EMAIL', $user->EMAIL, SQLITE3_TEXT);
+		$stmt->bindValue(':PASS', $user->PASS, SQLITE3_TEXT);
+		$stmt->bindValue(':FIRST_NAME', $user->FIRST_NAME, SQLITE3_TEXT);
+		$stmt->bindValue(':LAST_NAME', $user->LAST_NAME, SQLITE3_TEXT);
+
+		return $stmt->execute();
+	}
 
 	/**
 	 * @param int $id
