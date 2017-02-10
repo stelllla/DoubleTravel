@@ -12,13 +12,12 @@ if (!empty($_SESSION['user_mail'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	var_dump($_POST);
-	$email = $_POST['email'];
-	$password = $_REQUEST['password'];
+	$email = $_POST['EMAIL'];
+	$password = $_REQUEST['PASS'];
 
 	$dbStore = new SQLiteStore();
 
-	if(key_exists('firstName', $_POST) && key_exists('lastName', $_POST)) {
+	if(key_exists('FIRST_NAME', $_POST) && key_exists('LAST_NAME', $_POST)) {
 		$userToInsert = new User($_POST);
 		$dbStore->saveUser($userToInsert);
 	}
