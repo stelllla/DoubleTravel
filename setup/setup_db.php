@@ -1,6 +1,4 @@
 <?php
-require_once ('../model/User.php');
-require_once ('../db/IDbStore.php');
 require_once ('../db/SQLiteStore.php');
 
 
@@ -8,13 +6,10 @@ class AppSetup
 {
 	public function main()
 	{
-		$dbDriverName = Config::get('db.driver', 'SQLiteStore');
 		/** @var SQLiteStore $dbDriver */
-		$dbDriver = new $dbDriverName;
+		$dbDriver = new SQLiteStore();
 
-		$storeLocation = VAR_DIR . \Config::get('db.store.name') . '.db';
-
-		$this->p_msg("Provision database: $storeLocation");
+		$this->p_msg("Provision database ");
 		if (!$dbDriver->provisionDB()) {
 			$this->p_msg("ERROR: Failed to provision blank database.");
 			return;

@@ -1,16 +1,18 @@
 <?php
 
 require_once ('../model/User.php');
-require_once ('IDbStore.php');
 
-class SQLiteStore implements IDbStore
+class SQLiteStore
 {
+
+	/** @var SQLite3 */
+	private $db;
 
 	function __construct($location = '')
 	{
 		if (empty($location)) {
 			// fallback to default location. eg. VAR_DIR/profiles.db
-			$location = VAR_DIR . '/' . Config::get('db.store.name') . '.db';
+			$location = __DIR__ . '/my.db';
 		}
 		if (empty($this->db)) {
 			$this->db = new SQLite3($location);
