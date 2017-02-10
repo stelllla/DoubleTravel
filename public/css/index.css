@@ -312,3 +312,33 @@ footer p {
   width: 150px;
   display: flex;
 }
+
+.hidden{
+  display: none;
+}
+
+.whether-table {
+  margin-left: 25%;
+  text-align: center;
+}
+.whether-table th {
+  width: 100px;
+  border-style: groove;
+}
+
+.inline {
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+a {
+  text-decoration: none;
+}

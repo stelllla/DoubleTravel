@@ -4,25 +4,30 @@
     <meta charset="UTF-8">
     <title>Login</title>
 
-    <link href="../public/css/layout.css" rel="stylesheet">
-    <link href="../public/css/index.css" rel="stylesheet">
-    <link href="../public/css/login.css" rel="stylesheet">
+    <link href="/css/layout.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+    <link href="/css/login.css" rel="stylesheet">
 </head>
 <body>
     <div class="login">
-        <header class="login-header"><span class="text">LOGIN</span><span class="loader"></span></header>
-        <form class="login-form" action="../login.php" method="POST">
+        <header class="login-header"><span id="login-title" class="text">Login</span><span class="loader"></span></header>
+        <form class="login-form" action="" method="POST">
             <input class="login-input" type="text" id="email" name="email" placeholder="Email"/>
             <input class="login-input" type="password" id="password" name="password" placeholder="Password"/>
+            <input class="login-input hidden" type="text" id="first_name" name="first_name" placeholder="First Name"/>
+            <input class="login-input hidden" type="password" id="last_name" name="last_name" placeholder="Last Name"/>
+
             <button class="login-btn" type="submit">login</button>
         </form>
+
+    </div>
+    <div>
+        <button id="signup-btn" class="btn btn-outline btn-xl sign-up-btn">Sign up now!</button>
     </div>
 
-    <script src="../public/vendor/jquery/jquery.min.js"></script>
-
     <!-- JavaScript -->
-    <script src="../public/js/index.js"></script>
-    <script src="../public/js/login.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/login.js"></script>
 
 </body>
 </html>

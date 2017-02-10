@@ -20,10 +20,11 @@
 
 <div class="fixed-navigation">
         <span class="align-left">
-            You are signed in as Stella Gavrailova
+            You are signed in as <?= $user->FIRST_NAME ?> <?= $user->LAST_NAME ?>
         </span>
     <span class="align-right">
-        <a href="#" class="btn btn-outline btn-xl page-scroll">Logout</a>
+
+        <a href="?logout=true" class="btn btn-outline btn-xl page-scroll">Logout</a>
         </span>
 </div>
 <div class="content">
@@ -76,14 +77,14 @@
                     </div>
                     <div class="col-md-6">
                         <select name="countries" id="countries" class="form-control">
-                         <?= $options ?>
+                            <option value="-1">Select a country...</option>
+                            <?= $options ?>
                         </select>
                     </div>
 
                     <button class="btn btn-outline btn-xl" type="submit" value="submit"> Search</button>
                 </form>
             </div>
-
             <div class="col-md-12" id="items">
                 <div class="container-fluid">
                     <div class="col-md-11 row">
@@ -101,7 +102,7 @@
                                 <i class="icon-map text-primary"></i>
                                 <h4><b>Capital:</b></h4>
                             </div>
-                            <p class="text-muted tab"> <?= $selectedCountry->capital?></p>
+                            <p class="text-muted tab" id="selectedCountryCapital"> <?= $selectedCountry->capital?></p>
                         </div>
                     </div>
                     <div class="col-md-11 row">
@@ -147,19 +148,31 @@
                             <p class="text-muted tab"><?= $selectedCountry->languages ?></p>
                         </div>
                     </div>
-                    <div id="lat" hidden><?= $selectedCountry->latlng[0] ?></div>
+                    <div id="lat" hidden><?= $selectedCountry->latlng[0]?></div>
                     <div id="lng" hidden><?= $selectedCountry->latlng[1]?></div>
 
-                    <button class="btn btn-outline btn-xl">Find countries in the same region</button>
-                    <div>
+                    <div class="text-center">
+                        <button class="btn btn-outline btn-xl tab showRelatedCountries">Find countries in the same region</button>
+                        <button class="btn btn-outline btn-xl tab showRelatedCountries" id="showWhether">Show country whether forecast</button>
+                    </div>
+                    <div class="col-md-11 row inline">
+                    <div id="relatedCountries" class="col-md-offset-2 hidden">
                         <ul>
                             <?= $relatedCountriesList ?>
                         </ul>
                     </div>
-
+                    <div id="whetherContainer" class="col-md-12 col-md-offset-2 hidden">
+                        <br>
+                        <table class="whether-table">
+                            <thead>
+                            <?= $whetherTable ?>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
+       </div>
     </section>
     <div id="googleMap" style="width:100%;height:400px;background:gray"></div>
 </div>
@@ -172,32 +185,12 @@
 </footer>
 
 <!-- jQuery -->
-<script
-        src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script>
-
+<!--<script-->
+        <!--src="https://code.jquery.com/jquery-3.1.1.min.js"-->
+        <!--integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="-->
+        <!--crossorigin="anonymous"></script>-->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvW2yIxm-rxArvKbzrrle25lWTWAXMNtg"></script>
 <script src="/js/index.js"></script>
-
-<script>
-    var lat = (document.getElementById('lat')).innerHTML;
-    var lng = (document.getElementById('lng')).innerHTML;
-    function myMap() {
-        var center = new google.maps.LatLng(lat,lng);
-        var mapProp= {
-            center: center,
-            zoom:5
-        };
-        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        var marker = new google.maps.Marker({position: center});
-        map.panTo(center);
-        marker.setMap(map);
-
-
-    }
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvW2yIxm-rxArvKbzrrle25lWTWAXMNtg&callback=myMap"></script>
 
 </body>
 
