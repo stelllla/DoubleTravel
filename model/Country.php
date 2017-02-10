@@ -206,7 +206,7 @@ public $languageMap = array (
 	/** @var string  */
 	public $currencies = '';
 	/** @var array  */
-	public $latlng = [23,45];
+	public $latlng = [43,25];
 	/** @var string  */
 	public $languages = '';
 
