@@ -30,16 +30,14 @@ class Country
 		}
 
 		foreach (get_object_vars($this) as $name => $v) {
-			if ($name == 'currencies' || $name == 'languages') {
-				for ($i=0; $i < count($data[$name]); $i++) {
-					$this->$name .= $data[$name][$i] . ' ';
-				}
+			if (!array_key_exists($name, $data)) {
 				continue;
 			}
-
-			if (isset($data[$name])) {
-				$this->$name = $data[$name];
+			$v = $data[$name];
+			if ($name == 'currencies' || $name == 'languages') {
+				$v = implode(' ', $v);
 			}
+			$this->$name = $v;
 		}
 	}
 
