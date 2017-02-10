@@ -76,7 +76,7 @@
                     </div>
                     <div class="col-md-6">
                         <select name="countries" id="countries" class="form-control">
-                         <?= print_r($options) ?>
+                         <?= $options ?>
                         </select>
                     </div>
 
@@ -92,7 +92,7 @@
                                 <i class="icon-info text-primary"></i>
                                 <h4><b>Name:</b></h4>
                             </div>
-                            <p class="text-muted tab"> <?= print_r($selectedCountry->name,true)?> (<?= print_r($selectedCountry->nativeName,true) ?>)</p>
+                            <p class="text-muted tab"> <?= $selectedCountry->name ?> (<?=$selectedCountry->nativeName?>)</p>
                         </div>
                     </div>
                     <div class="col-md-11 row">
@@ -101,7 +101,7 @@
                                 <i class="icon-map text-primary"></i>
                                 <h4><b>Capital:</b></h4>
                             </div>
-                            <p class="text-muted tab"> <?= print_r($selectedCountry->capital,true)?></p>
+                            <p class="text-muted tab"> <?= $selectedCountry->capital?></p>
                         </div>
                     </div>
                     <div class="col-md-11 row">
@@ -110,7 +110,7 @@
                                 <i class="icon-location-pin text-primary"></i>
                                 <h4><b>Region:</b></h4>
                             </div>
-                            <p class="text-muted tab"><?= print_r($selectedCountry->region,true)?> (<?=print_r($selectedCountry->subregion,true) ?>)</p>
+                            <p class="text-muted tab"><?= $selectedCountry->region ?> (<?= $selectedCountry->subregion ?>)</p>
                         </div>
                     </div>
                     <div class="col-md-11 row">
@@ -119,7 +119,7 @@
                                 <i class="icon-people text-primary"></i>
                                 <h4><b>Population:</b></h4>
                             </div>
-                            <p class="text-muted tab"><?= print_r($selectedCountry->population,true) ?></p>
+                            <p class="text-muted tab"><?= $selectedCountry->population ?></p>
                         </div>
                     </div>
                     <div class="col-md-11 row">
@@ -128,14 +128,14 @@
                                 <i class="icon-directions text-primary"></i>
                                 <h4><b>Area:</b></h4>
                             </div>
-                            <p class="text-muted tab"><?= print_r($selectedCountry->area,true) ?> &#x33a2</p>
+                            <p class="text-muted tab"><?= $selectedCountry->area ?> &#x33a2</p>
                         </div>
                     </div>
                     <div class="col-md-11 row">
                         <div class="feature-item">
                             <i class="icon-wallet text-primary"></i>
                             <h4><b>Currencies:</b></h4>
-                            <p class="text-muted tab"><?= print_r($selectedCountry->currencies,true) ?></p>
+                            <p class="text-muted tab"><?= $selectedCountry->currencies?></p>
                         </div>
                     </div>
                     <div class="col-md-11 row">
@@ -144,13 +144,18 @@
                                 <i class="icon-speech text-primary"></i>
                                 <h4><b>Languages:</b></h4>
                             </div>
-                            <p class="text-muted tab"><?= print_r($selectedCountry->languages,true) ?></p>
+                            <p class="text-muted tab"><?= $selectedCountry->languages ?></p>
                         </div>
                     </div>
-                    <div id="lat" hidden><?= print_r($selectedCountry->latlng[0],true) ?></div>
-                    <div id="lng" hidden><?= print_r($selectedCountry->latlng[1],true) ?></div>
+                    <div id="lat" hidden><?= $selectedCountry->latlng[0] ?></div>
+                    <div id="lng" hidden><?= $selectedCountry->latlng[1]?></div>
 
-                    <a href="#" class="btn btn-outline btn-xl">Find countries in the same region</a>
+                    <button class="btn btn-outline btn-xl">Find countries in the same region</button>
+                    <div>
+                        <ul>
+                            <?= $relatedCountriesList ?>
+                        </ul>
+                    </div>
 
                 </div>
             </div>
